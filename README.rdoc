@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Step 1: Create welcome controller and index action and the applications root
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Step 2: Configure Devise
+        a. gem "devise"  and then bundle install
+        b. rails g devise:install   => this will create two files
+       config/initializers/devise.rb
+       config/locals/devise.en.yml
+        c. rails g devise User     => It will generate model user.rb and a migration for user
+        d. rake db:migrate
+        e. In the application controller, add the following code
+         before_action :authenticate_user!
+        f. gem "twitter-bootstrap-rails"
+        g.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
