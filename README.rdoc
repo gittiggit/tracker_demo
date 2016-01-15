@@ -4,15 +4,35 @@ Step 1: Create welcome controller and index action and the applications root
 
 Step 2: Configure Devise
         a. gem "devise"  and then bundle install
-        b. rails g devise:install   => this will create two files
+        b. rails g devise:install                   => this will create two files
        config/initializers/devise.rb
        config/locals/devise.en.yml
-        c. rails g devise User     => It will generate model user.rb and a migration for user
+        c. rails g devise User                      => It will generate model user.rb and a migration for user
         d. rake db:migrate
         e. In the application controller, add the following code
-         before_action :authenticate_user!
-        f. gem "twitter-bootstrap-rails"
-        g.
+           before_action :authenticate_user!
+        f. gem "twitter-bootstrap-rails"            => bundle install
+        g. rails g bootstrap:install static         => you can use fluid instead of static
+        h. Now time to bootstrapy-fy the application.
+        i. rails g bootstrap:layout application     => It will overwright the application.html.erb file of the app
+           and will create a new layout
+        j. gem "devise-bootstrap-views"             => Devise don't i18n for the views. We need this gem for this purpose
+        k. Next in the application.css file, incliude the following line above the *= require_tree .
+           *= require devise_bootstrap_views
+           After that you will find devise views has an excellent look and feel
+        l. Now we meed to give i18n support to views
+           rails g devise:views:locale en           => here instead of en, you can specify any language like as it, vn etc
+        m. rails g devise:views:bootstrap_templates => Will generate all the devise views with i18n and bootstrap support
+           and to customize
+
+        n.Ensure you have a root route and a resource users for devise
+          devise_for :users
+          get "welcomes/index"
+        	root "welcomes#index"
+
+====================================================================================================================================
+
+
 
 
 
