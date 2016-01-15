@@ -75,6 +75,8 @@ Step 4: In the stock model we will write some class methods, as they are not tie
 
 ==============================================================================================
 
+Step 5:
+
 
 
 
