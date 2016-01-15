@@ -47,4 +47,3 @@ Step 3: Removing sidebar from layout, removing password recovery link from layou
 
 
 
-
